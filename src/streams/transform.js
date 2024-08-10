@@ -14,6 +14,12 @@ const reverseString = new Transform({
 });
 
 const transform = async () => {
+  console.log(
+    "Please input text to reverse" +
+      "\n" +
+      "Use Ctrl+C combination to stop" +
+      "\n"
+  );
   input.pipe(reverseString).pipe(output);
 };
 
