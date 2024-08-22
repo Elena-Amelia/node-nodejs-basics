@@ -1,5 +1,5 @@
 import { Worker } from "node:worker_threads";
-import path, { resolve } from "node:path";
+import path from "node:path";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { cpus } from "node:os";
