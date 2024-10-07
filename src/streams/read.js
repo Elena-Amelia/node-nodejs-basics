@@ -1,11 +1,10 @@
-import fs from "node:fs";
-import path from "node:path";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
+import { createReadStream } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const filePath = path.join(__dirname, "files", "fileToRead.txt");
-const readableStream = fs.createReadStream(filePath, "utf-8");
+const filePath = join(__dirname, "files", "fileToRead.txt");
+const readableStream = createReadStream(filePath, "utf-8");
 let fileData = "";
 
 const read = async () => {

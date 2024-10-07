@@ -1,13 +1,9 @@
 import { Worker } from "node:worker_threads";
-import path from "node:path";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { cpus } from "node:os";
 
-const workerPath = path.join(
-  dirname(fileURLToPath(import.meta.url)),
-  "worker.js"
-);
+const workerPath = join(dirname(fileURLToPath(import.meta.url)), "worker.js");
 
 const performCalculations = async () => {
   const coresNumber = cpus().length;

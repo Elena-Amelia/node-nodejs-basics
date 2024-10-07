@@ -1,10 +1,9 @@
 import { spawn } from "node:child_process";
-import path from "node:path";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { stdin, stdout } from "node:process";
 
-const childPath = path.join(
+const childPath = join(
   dirname(fileURLToPath(import.meta.url)),
   "files",
   "script.js"

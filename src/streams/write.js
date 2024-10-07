@@ -1,11 +1,10 @@
-import fs from "node:fs";
-import path from "node:path";
-import { dirname } from "path";
-import { fileURLToPath } from "url";
+import { createWriteStream } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const filePath = path.join(__dirname, "files", "fileToWrite.txt");
-const writeableStream = fs.createWriteStream(filePath);
+const filePath = join(__dirname, "files", "fileToWrite.txt");
+const writeableStream = createWriteStream(filePath);
 
 const write = async () => {
   console.log(
